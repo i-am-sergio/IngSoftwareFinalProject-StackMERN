@@ -1226,7 +1226,7 @@ El componente "Chat" parece estar relacionado con la funcionalidad de mensajerí
 
 - *Repositories*: Aunque no se muestra directamente en el código, es posible que el componente interactúe con repositorios para obtener y almacenar información de conversaciones y mensajes.
 
-jsx
+```jsx
 // Código del Componente "Chat"
 import React, { useRef, useState, useEffect } from "react";
 import ChatBox from "../../components/ChatBox/ChatBox";
@@ -1249,7 +1249,7 @@ const Chat = () => {
 };
 
 export default Chat;
-
+```
 
 ### Componente "Auth"
 
@@ -1261,7 +1261,7 @@ El componente "Auth" parece gestionar la autenticación de usuarios y el registr
 
 - *Commands y Events*: El componente interactúa con acciones como "logIn" y "signUp", que podrían considerarse comandos que cambian el estado del dominio y generan eventos relacionados con la autenticación y el registro.
 
-jsx
+```jsx
 // Código del Componente "Auth"
 import React from "react";
 import "./Auth.css";
@@ -1281,7 +1281,7 @@ const Auth = () => {
 };
 
 export default Auth;
-
+```
 
 ### Componente "Home"
 
@@ -1291,7 +1291,7 @@ El componente "Home" parece representar la página principal de la aplicación. 
 
 - *UI Composition*: El componente compone la interfaz utilizando subcomponentes como "ProfileSide", "PostSide" y "RightSide". Esto muestra una estructura modular que puede reflejar una organización en capas y composición de UI.
 
-jsx
+```jsx
 // Código del Componente "Home"
 import React from "react";
 import PostSide from "../components/PostSide/PostSide";
@@ -1308,7 +1308,7 @@ const Home = () => {
 };
 
 export default Home;
-
+```
 
 # Para ejecutar el proyecto:
 ```bash
