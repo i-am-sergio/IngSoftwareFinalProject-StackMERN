@@ -1,7 +1,13 @@
 # SocialNetworkUniverseasas
 
 # Red Social Universitaria: UNIverse
-
+Integrantes:
+- Sergio Daniel Mogollon Caceres
+- Paul Anthony Parizaca Mozo
+- Braulio Nayap Maldonado Casilla
+- Luciana Julissa Huaman Coaquira
+- Jharold Alonso Mayorga Villena
+- Andrea Del Rosario Lopez Condori
 ## Tabla de contenido
    1. [Proposito del Proyecto](#Proposito).
    2. [Funcionalidades: Diagrama de Casos de Uso y Prototipo](#Funcionalidades).
