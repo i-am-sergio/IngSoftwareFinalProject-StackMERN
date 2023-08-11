@@ -1218,7 +1218,7 @@ A continuación se presenta un análisis de los componentes "Chat", "Auth" y "Ho
 
 ### Componente "Chat"
 
-El componente "Chat" parece estar relacionado con la funcionalidad de mensajería y la gestión de conversaciones entre usuarios. Veamos cómo se relaciona con los conceptos de DDD:
+El componente "Chat" esta relacionado con la funcionalidad de mensajería y la gestión de conversaciones entre usuarios. Veamos cómo se relaciona con los conceptos de DDD:
 
 - *Aggregates y Entity*: El componente "Chat" podría representar Aggregates que contienen información sobre conversaciones y mensajes. Cada conversación podría considerarse una entidad del dominio, con propiedades como miembros y mensajes intercambiados.
 
@@ -1253,7 +1253,7 @@ export default Chat;
 
 ### Componente "Auth"
 
-El componente "Auth" parece gestionar la autenticación de usuarios y el registro en la aplicación. Veamos cómo se relaciona con los conceptos de DDD:
+El componente "Auth" gestiona la autenticación de usuarios y el registro en la aplicación. Veamos cómo se relaciona con los conceptos de DDD:
 
 - *Aggregates y Entity*: Si bien no se muestra directamente en el código, el componente podría estar relacionado con entidades del dominio como "Usuarios" y "Cuentas", que son esenciales para la autenticación y el registro.
 
