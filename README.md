@@ -61,15 +61,12 @@ Desde la perspectiva del proyecto, se presenta una red social especificamente di
 
 
 
-# Para ejecutar
-## npm install en la carpeta server
-
-## npm install en la carpeta socket
-
-## npm install en la carpeta client
-
-## npm start en la carpeta server
-
-## npm start en la carpeta socket
-
-## npm start en la carpeta client
+# Para ejecutar el proyecto:
+```bash
+npm install en la carpeta server
+npm install en la carpeta socket
+npm install en la carpeta client
+npm start en la carpeta server
+npm start en la carpeta socket
+npm start en la carpeta client
+```
