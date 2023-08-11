@@ -47,6 +47,14 @@ const Auth = () => {
     }
   };
 
+  let buttonText = "";
+  if (loading) {
+    buttonText = "Loading...";
+  } else {
+    buttonText = isSignUp ? "SignUp" : "Login";
+  }
+
+
   return (
     <div className="Auth">
       {/* left side */}
@@ -153,9 +161,7 @@ const Auth = () => {
               type="Submit"
               disabled={loading}
             >
-              {
-                loading ? "Loading..." : isSignUp ? "SignUp" : "Login"
-              }
+              { buttonText }
             </button>
           </div>
         </form>
