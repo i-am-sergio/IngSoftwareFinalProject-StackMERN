@@ -7,7 +7,10 @@
    2. [Funcionalidades: Diagrama de Casos de Uso y Prototipo](#Funcionalidades).
    3. [Modelo de Dominio: Diagrama de Clases y Módulos](#Modelo-de-Dominio).
    4. [Arquitectura y Patrones: Diagra de Componentes o Paquetes](#Arquitectura-y-Patrones).
-  -
+   5. [Practicas de Codificacion Limpia](#Practicas-de-Codificacion-Limpia)
+   6. [Estilos de Programacion](#Estilos-de-Programacion)
+   7. [Principios SOLID](#Principios-SOLID)
+   8. [Conceptos DDD](#Conceptos-DDD)
 
 ## Proposito: 
 La presente propuesta tiene como objetivo el desarrollo de una plataforma de Red Social que permita a los estudiantes de la Universidad Nacional de San Agust´ın comunicarse mediante mensajerıa, compartir contenido y ampliar sus opciones de interaccion social. Este proyecto busca proporcionar una herramienta eficiente y efectiva para fomentar la conectividad y la participacion activa de los estudiantes en su entorno academico y social.
@@ -255,7 +258,7 @@ useEffect(() => {
 }, []);
 ```
 
-4. **Separación de preocupaciones:**
+4. **Separacion de preocupaciones:**
    - El efecto `useEffect` se utiliza para separar la lógica de obtención de datos del usuario y el dispatch de Redux.
 
 5. **Reutilización de código:**
@@ -321,7 +324,7 @@ const resetShare = () => {
 };
 ```
 
-4. **Separación de preocupaciones:**
+4. **Separacion de preocupaciones:**
    - El componente `PostShare` se encarga de la interfaz de usuario y la lógica de carga de publicaciones.
 
 5. **Reutilización de código:**
@@ -349,7 +352,7 @@ const resetShare = () => {
     - Ejemplo de destructuring en el código:
 
 
-#### 5.1.5 Código Limpio en el Componente User
+#### 5.1.5 Codigo Limpio en el Componente User
 
 Sea componente `User.jsx` de la carpeta `User`
 
@@ -408,7 +411,7 @@ const { user } = useSelector((state) => state.authReducer.authData);
 ```
 
 
-#### 5.1.6 Código Limpio en el Componente FollowersModal
+#### 5.1.6 Codigo Limpio en el Componente FollowersModal
 
 Sea componente `FollowersModal.jsx` de la carpeta `FollowersModal`
 
@@ -457,7 +460,7 @@ return (
 ```
 
 
-#### 5.1.7 Código Limpio en el Componente InfoCard
+#### 5.1.7 Codigo Limpio en el Componente InfoCard
 
 Sea componente `InfoCard.jsx` de la carpeta `InfoCard`
 
@@ -522,7 +525,7 @@ return (
 ```
 
 
-#### 5.1.8 Código Limpio en el Componente LogoSearch
+#### 5.1.8 Codigo Limpio en el Componente LogoSearch
 
 Sea componente `LogoSearch.jsx` de la carpeta `LogoSearch`
 
@@ -562,7 +565,7 @@ const LogoSearch = () => {
 
 
 
-#### 5.1.9 Código Limpio en el Componente ChatBox
+#### 5.1.9 Codigo Limpio en el Componente ChatBox
 
 Sea componente `ChatBox.jsx` de la carpeta `ChatBox`
 
