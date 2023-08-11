@@ -818,6 +818,70 @@ const { user } = useSelector((state) => state.authReducer.authData);
 
 ## Estilos de Programacion
 
+## Estilos de Programacion generales
+## _Estilo RestFul_
+La implementación del estilo RESTful en el código proporcionado se centra en la creación de una API que sigue los principios y restricciones de REST (REpresentational State Transfer) para construir una interfaz interactiva entre un cliente y un servidor. A continuación, explicaré cómo se implementan los principios RESTful en el código detalladamente:
+
+1. **Separación entre Cliente y Servidor:**
+La separación entre cliente y servidor se logra al utilizar Express, una librería de Node.js, para crear el servidor y definir las rutas y controladores necesarios para manejar las solicitudes HTTP. Por otro lado, el cliente se encarga de hacer las solicitudes HTTP al servidor para obtener o enviar datos.
+
+2. **Statelessness (Sin estado):**
+RESTful implica que cada solicitud del cliente al servidor debe contener toda la información necesaria para que el servidor pueda procesar la solicitud sin necesidad de almacenar el estado del cliente en el servidor. En este código, cada solicitud contiene la información requerida en el cuerpo de la solicitud (por ejemplo, datos JSON) o en los parámetros de la URL (por ejemplo, ID en la ruta).
+
+3. **Uniform Interface (Interfaz uniforme):**
+En una interfaz uniforme RESTful, los recursos son identificados y manipulados a través de URLs. El servidor proporciona representaciones de recursos en formatos estándar (como JSON) y los clientes interactúan con estos recursos utilizando métodos HTTP (GET, POST, PUT, DELETE). En el código, podemos ver cómo se definen las rutas utilizando `app.use(chatRoutes)` y cómo se manejan las solicitudes GET, POST, PUT y DELETE en las rutas definidas en el archivo `chat.routes.js`.
+
+4. **Recursos y Métodos HTTP:**
+RESTful utiliza recursos (por ejemplo, una entidad de base de datos) como conceptos clave y los expone a través de URLs para que los clientes puedan interactuar con ellos mediante métodos HTTP. En este código, se están utilizando las rutas y los métodos HTTP para interactuar con los recursos de la aplicación, como la obtención de mensajes de chat, el envío de mensajes, etc.
+
+5. **Recursos y Representación de Recursos:**
+En RESTful, cada recurso tiene una representación, que suele ser en formato JSON o XML. La representación es lo que el servidor devuelve al cliente cuando se realiza una solicitud para un recurso en particular. En el código, vemos cómo se devuelven los mensajes de chat en formato JSON cuando se realiza una solicitud para obtener los mensajes.
+
+La implementación del estilo RESTful en el código se logra al crear una API que sigue los principios y restricciones de REST. Se definen rutas y controladores para cada recurso, y el cliente interactúa con estos recursos utilizando métodos HTTP y URLs. Los datos se intercambian en formato JSON entre el cliente y el servidor, lo que proporciona una interfaz uniforme y sin estado para una comunicación efectiva entre ambas partes.
+
+- app.js
+```javascript
+import express from "express";
+import fileUpload from "express-fileupload";
+import chatRoutes from "./routes/chat.routes.js";
+import { dirname, join } from "path";
+import { fileURLToPath } from "url";
+import cors from 'cors';
+
+const app = express();
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// middlewares
+app.use(cors())
+app.use(express.json());
+app.use(
+  fileUpload({
+    useTempFiles: true,
+    tempFileDir: "./upload",
+  })
+);
+
+// routes
+app.use(chatRoutes);
+console.log(__dirname);
+app.use(express.static(join(__dirname, "../client/build")));
+
+export default app;
+```
+
+- index.js
+
+```javascript
+import app from './app.js'
+import { connectDB } from "./db.js";
+import { PORT } from "./config.js";
+
+connectDB();
+app.listen(PORT);
+console.log(`Server on port ${PORT}`);
+```
+
+
 ### Componente `LogoSearch`
 
 ```jsx
