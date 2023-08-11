@@ -59,13 +59,13 @@ Desde la perspectiva del proyecto, se presenta una red social especificamente di
 
 		Figura 2. Modelo de Dominio y los Subcontextos usando Paquetes UML
 
-## 4. Arquitectura y Patrones
+## Arquitectura y Patrones
 
 ### 4.1 Diagrama de Componentes o Paquetes
 
 Se incluye un diagrama que representa la arquitectura de componentes o paquetes del sistema. Esto ayuda a comprender la distribución y la interacción de los diferentes componentes del software.
 
-## 5. Prácticas de Codificación Limpia
+## Practicas de Codificacion Limpia
 
 ### 5.1 Parte Implementada en el Proyecto
 
@@ -627,7 +627,7 @@ const { user } = useSelector((state) => state.authReducer.authData);
     - Se utilizan referencias `scroll` y `imageRef` para manejar el desplazamiento y la carga de imágenes.
 
 
-## 6. Estilos de Programación
+## Estilos de Programación
 
 ### 6.1 Descripción
 
@@ -637,7 +637,7 @@ Se va a describir el enfoque y los estilos de programación utilizados en el pro
 
 Se muestra un fragmento de código que ilustra la implementación de un estilo de programación particular.
 
-## 7. Principios SOLID
+## Principios SOLID
 
 ### 7.1 Descripción
 
@@ -647,7 +647,7 @@ Se explica cómo se aplicaron los principios SOLID (Single Responsibility, Open/
 
 Se exhibe un fragmento de código que demuestra la adhesión a uno o varios principios SOLID.
 
-## 8. Conceptos DDD
+## Conceptos DDD
 
 ### 8.1 Descripción
 
