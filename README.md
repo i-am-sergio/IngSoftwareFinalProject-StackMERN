@@ -627,7 +627,7 @@ const { user } = useSelector((state) => state.authReducer.authData);
     - Se utilizan referencias `scroll` y `imageRef` para manejar el desplazamiento y la carga de imágenes.
 
 
-## Estilos de Programación
+## Estilos de Programacion
 
 ### Componente `LogoSearch`
 
