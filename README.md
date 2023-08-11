@@ -1120,24 +1120,194 @@ export default NavIcons;
 
 Se explica cómo se aplicaron los principios SOLID (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) en el desarrollo del software.
 
-### 7.2 Fragmento de Código (Evidencia)
+### 7.2 Principio de Responsabilidad Unica(SRP) 
 
-Se exhibe un fragmento de código que demuestra la adhesión a uno o varios principios SOLID.
+El principio de Responsabilidad Única (SRP) se refiere a que una clase o función debería tener una sola razón para cambiar, es decir, debe tener una única responsabilidad. 
+Se exhibe un fragmento de código que demuestra la adhesión a uno o varios principios
+
+```createPost:
+export const createPost = async (req, res) => {
+    const newPost = new PostModel(req.body);
+    try {
+        await newPost.save();
+        res.status(200).json(newPost);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+};
+```
+### 7.3 Principio de Inversión de Dependencia (DIP) 
+
+El Principio de Inversión de Dependencia (DIP) es uno de los principios SOLID que sugiere cómo estructurar las relaciones entre módulos y componentes dentro de un sistema de software. En lugar de que los módulos de alto nivel dependan directamente de los módulos de bajo nivel, el DIP propone que ambos niveles dependan de abstracciones o interfaces. Esto permite una mayor flexibilidad, mantenibilidad y extensibilidad del código.
+
+Cada una de estas funciones, se puede observar cómo se enfocan en una tarea específica, lo que sugiere que el código sigue el principio de Responsabilidad Única al desglosar cada tarea en funciones separadas y claramente definida SOLID.
+
+ ###Definiriamos una interfaz para el manejo de usuarios:
+```createPost:
+// IUserService.js
+export default class IUserService {
+    async createUser(user) {}
+    async findUserByUsername(username) {}
+    // Otros métodos relevantes...
+};
+```
+
+###Luego, podríamos implementar esta interfaz en el archivo userService.js:
+```userService.js
+// userService.js
+import UserModel from "../Users/Models/userModel.js";
+
+export default class UserService extends IUserService {
+    async createUser(user) {
+        // Implementación específica para crear un usuario en la base de datos
+    }
+
+    async findUserByUsername(username) {
+        // Implementación específica para encontrar un usuario por nombre de usuario
+    }
+    // Otros métodos relevantes...
+}
+
+```
+###Finalmente, en el archivo original, usamos esta interfaz y la implementación concreta a través de la inyección de dependencias: 
+
+```AuthController.js
+// userService.js
+import UserService from "./userService.js";
+import IUserService from "./IUserService.js";
+// Otros imports...
+
+// Crear una instancia de UserService (implementación concreta)
+const userService = new UserService();
+
+// Ahora podrías usar userService en lugar de UserModel directamente
+export const registerUser = async (req, res) => {
+    // ...
+    try {
+        const oldUser = await userService.findUserByUsername(username);
+        // ...
+        const user = await userService.createUser(newUser);
+        // ...
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+export const loginUser = async (req, res) => {
+    // ...
+    try {
+        const user = await userService.findUserByUsername(username);
+        // ...
+    } catch (err) {
+        res.status(500).json(err);
+    }
+};
+
+
+```
+
+Este enfoque introduce una abstracción (IUserService) y la implementación concreta (UserService) que cumplen con el DIP. El enrutador ahora depende de la interfaz y la implementación concreta, en lugar de depender directamente de UserModel. Esto hace que el codigo sea más flexible, mantenible y extensible, ya que puedes cambiar la implementacion subyacente sin afectar el enrutador.
+
+
+
 
 ## Conceptos DDD
 
-### 8.1 Descripción
 
-Se detalla cómo se incorporaron los conceptos de Domain-Driven Design (DDD) en el diseño y desarrollo del proyecto.
+A continuación se presenta un análisis de los componentes "Chat", "Auth" y "Home", examinando cómo se relacionan con los conceptos del Domain-Driven Design (DDD) y las buenas prácticas de programación:
 
-### 8.2 Fragmento de Código (Evidencia)
+### Componente "Chat"
 
-Se muestra un fragmento de código que refleja la implementación de un concepto DDD específico.
+El componente "Chat" parece estar relacionado con la funcionalidad de mensajería y la gestión de conversaciones entre usuarios. Veamos cómo se relaciona con los conceptos de DDD:
 
-Este README proporciona una estructura completa para documentar tu proyecto de manera organizada y detallada. Asegúrate de llenar cada sección con la información relevante y las pruebas correspondientes para mostrar el enfoque y los logros de tu proyecto.
+- *Aggregates y Entity*: El componente "Chat" podría representar Aggregates que contienen información sobre conversaciones y mensajes. Cada conversación podría considerarse una entidad del dominio, con propiedades como miembros y mensajes intercambiados.
+
+- *Commands y Events*: Se observa la interacción con el servidor de sockets para enviar y recibir mensajes. Esto podría considerarse como comandos y eventos que representan acciones en el dominio de la mensajería.
+
+- *Repositories*: Aunque no se muestra directamente en el código, es posible que el componente interactúe con repositorios para obtener y almacenar información de conversaciones y mensajes.
+
+jsx
+// Código del Componente "Chat"
+import React, { useRef, useState, useEffect } from "react";
+import ChatBox from "../../components/ChatBox/ChatBox";
+import Conversation from "../../components/Coversation/Conversation";
+import LogoSearch from "../../components/LogoSearch/LogoSearch";
+import NavIcons from "../../components/NavIcons/NavIcons";
+import "./Chat.css";
+import { userChats } from "../../api/ChatRequests";
+import { useSelector } from "react-redux";
+import { io } from "socket.io-client";
+
+const Chat = () => {
+  // ... (Otras declaraciones y efectos)
+
+  return (
+    <div className="Chat">
+      {/* Contenido del chat */}
+    </div>
+  );
+};
+
+export default Chat;
 
 
+### Componente "Auth"
 
+El componente "Auth" parece gestionar la autenticación de usuarios y el registro en la aplicación. Veamos cómo se relaciona con los conceptos de DDD:
+
+- *Aggregates y Entity*: Si bien no se muestra directamente en el código, el componente podría estar relacionado con entidades del dominio como "Usuarios" y "Cuentas", que son esenciales para la autenticación y el registro.
+
+- *Value Objects*: El componente maneja datos como nombres, contraseñas y confirmación de contraseña, que podrían considerarse como Value Objects que representan atributos de entidades del dominio.
+
+- *Commands y Events*: El componente interactúa con acciones como "logIn" y "signUp", que podrían considerarse comandos que cambian el estado del dominio y generan eventos relacionados con la autenticación y el registro.
+
+jsx
+// Código del Componente "Auth"
+import React from "react";
+import "./Auth.css";
+import Logo from "../../img/logo.png";
+import { logIn, signUp } from "../../actions/AuthActions.js";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
+const Auth = () => {
+  // ... (Declaraciones y efectos)
+
+  return (
+    <div className="Auth">
+      {/* Contenido de autenticación */}
+    </div>
+  );
+};
+
+export default Auth;
+
+
+### Componente "Home"
+
+El componente "Home" parece representar la página principal de la aplicación. Analicemos cómo se relaciona con los conceptos de DDD:
+
+- *Dominio y Aggregates*: El componente podría estar relacionado con la presentación de contenido principal de la aplicación, como publicaciones y perfiles de usuario. Cada publicación podría considerarse un Aggregate que contiene información relevante.
+
+- *UI Composition*: El componente compone la interfaz utilizando subcomponentes como "ProfileSide", "PostSide" y "RightSide". Esto muestra una estructura modular que puede reflejar una organización en capas y composición de UI.
+
+jsx
+// Código del Componente "Home"
+import React from "react";
+import PostSide from "../components/PostSide/PostSide";
+import ProfileSide from "../components/profileSide/ProfileSide";
+import RightSide from "../components/RightSide/RightSide";
+import "./Home.css";
+
+const Home = () => {
+  return (
+    <div className="Home">
+      {/* Contenido de la página principal */}
+    </div>
+  );
+};
+
+export default Home;
 
 
 # Para ejecutar el proyecto:
