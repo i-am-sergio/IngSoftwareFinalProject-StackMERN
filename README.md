@@ -1291,7 +1291,7 @@ El componente "Home" parece representar la página principal de la aplicación. 
 
 - *UI Composition*: El componente compone la interfaz utilizando subcomponentes como "ProfileSide", "PostSide" y "RightSide". Esto muestra una estructura modular que puede reflejar una organización en capas y composición de UI.
 
-```jsx
+``` jsx
 // Código del Componente "Home"
 import React from "react";
 import PostSide from "../components/PostSide/PostSide";
