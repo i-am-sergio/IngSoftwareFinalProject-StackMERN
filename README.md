@@ -3,10 +3,10 @@
 # Red Social Universitaria: UNIverse
 
 ## Tabla de contenido
-  - 1. [Proposito del Proyecto](#Proposito).
-  - 2. [Funcionalidades: Diagrama de Casos de Uso y Prototipo](#Funcionalidades).
-  - 3. [Modelo de Dominio: Diagrama de Clases y Módulos](#Modelo-de-Dominio).
-  - 4. [Arquitectura y Patrones: Diagra de Componentes o Paquetes](#Arquitectura-y-Patrones).
+   1. [Proposito del Proyecto](#Proposito).
+   2. [Funcionalidades: Diagrama de Casos de Uso y Prototipo](#Funcionalidades).
+   3. [Modelo de Dominio: Diagrama de Clases y Módulos](#Modelo-de-Dominio).
+   4. [Arquitectura y Patrones: Diagra de Componentes o Paquetes](#Arquitectura-y-Patrones).
   -
 
 ## Proposito: 
