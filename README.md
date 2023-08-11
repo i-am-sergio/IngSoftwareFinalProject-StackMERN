@@ -78,15 +78,19 @@ Por debajo de esta capa, se encuentran los servidores de aplicaciones, donde se 
 ### Diagrama de componentes
 Diagrama de componentes es una representación visual que muestra la estructura y las relaciones entre los componentes principales de un sistema de software. En el contexto de una red social, este diagrama ilustra cómo se organizan y comunican los elementos fundamentales que conforman el sistema.
 
-Componentes:
+#### Componentes:
 
 Interfaz de Usuario: Este componente representa la interfaz visual a través de la cual los usuarios interactúan con la red social. Puede dividirse en subcomponentes más pequeños que manejen la presentación y la interacción del usuario.
 
-Controladores: Los controladores son componentes que manejan la lógica de la aplicación y actúan como intermediarios entre la interfaz de usuario y la lógica empresarial. Controlan las acciones y las solicitudes del usuario, procesan la entrada y coordinan la comunicación entre otros componentes.
+#### Controladores: 
+Los controladores son componentes que manejan la lógica de la aplicación y actúan como intermediarios entre la interfaz de usuario y la lógica empresarial. Controlan las acciones y las solicitudes del usuario, procesan la entrada y coordinan la comunicación entre otros componentes.
 
-Servicios: Los servicios son componentes que encapsulan la lógica empresarial. Pueden incluir funcionalidades como la gestión de perfiles de usuarios, la publicación de contenido y la administración de relaciones sociales. Estos servicios se utilizan desde los controladores y otros componentes para realizar tareas específicas.
+#### Servicios: 
+Los servicios son componentes que encapsulan la lógica empresarial. Pueden incluir funcionalidades como la gestión de perfiles de usuarios, la publicación de contenido y la administración de relaciones sociales. Estos servicios se utilizan desde los controladores y otros componentes para realizar tareas específicas.
 
-Bases de Datos: Representa las bases de datos en las que se almacenan los datos de la red social, como perfiles de usuarios, publicaciones, comentarios y relaciones. Pueden subdividirse en componentes específicos para diferentes tipos de datos o módulos.
+### Bases de Datos: 
+Representa las bases de datos en las que se almacenan los datos de la red social, como perfiles de usuarios, publicaciones, comentarios y relaciones. Pueden subdividirse en componentes específicos para diferentes tipos de datos o módulos.
+
 [![Diagrama-compo-1.png](https://i.postimg.cc/6pdcFcGV/Diagrama-compo-1.png)]
 
 
