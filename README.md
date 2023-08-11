@@ -15,8 +15,6 @@
 ## Proposito: 
 La presente propuesta tiene como objetivo el desarrollo de una plataforma de Red Social que permita a los estudiantes de la Universidad Nacional de San Agust´ın comunicarse mediante mensajerıa, compartir contenido y ampliar sus opciones de interaccion social. Este proyecto busca proporcionar una herramienta eficiente y efectiva para fomentar la conectividad y la participacion activa de los estudiantes en su entorno academico y social.
 
-[![UWu.png](https://i.postimg.cc/nr376Ww6/UWu.png)](https://postimg.cc/N2r5Xdt4)
-
 
 ## Funcionalidades
 
@@ -68,7 +66,7 @@ Desde la perspectiva del proyecto, se presenta una red social especificamente di
 #### Diagrama de Paquetes
 Los paquetes son unidades de organización en el código fuente de un proyecto de software. Representan una forma de agrupar lógicamente funcionalidades relacionadas. Los paquetes ayudan a dividir el código en módulos más pequeños y manejables, lo que facilita la comprensión, el desarrollo y el mantenimiento. Además, proporcionan encapsulación y modularidad, lo que significa que se pueden desarrollar, probar y modificar componentes individuales sin afectar al resto del sistema.
 
-[![Diagrama-de-Paquetes.png](https://i.postimg.cc/L6PG6z15/Diagrama-de-Paquetes.png)]
+[![UWu.png](https://i.postimg.cc/nr376Ww6/UWu.png)](https://postimg.cc/N2r5Xdt4)
 
 
 ### Diagrama Despliegue
