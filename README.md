@@ -879,8 +879,6 @@ const ChatBox = ({ chat, currentUser, setSendMessage,  receivedMessage }) => {
 export default ChatBox;
 ```
 
-**Monolith (Monolito):** El componente `ChatBox` podría considerarse un "monolito" ya que encapsula la funcionalidad completa de un cuadro de chat, incluyendo la lógica de mensajes y la interfaz de usuario.
-
 **Cookbook (Recetario):** El uso de componentes predefinidos como `InputEmoji`, la representación visual de mensajes y el manejo de eventos de cambio y clic reflejan un estilo de "recetario".
 
 **Hollywood:** El manejo de la lógica de mensajes, la obtención de usuarios y la comunicación con el servidor a través de API muestran cierta inversión de control.
@@ -992,8 +990,6 @@ const FollowersModal = ({ modalOpened, setModalOpened }) => {
 export default FollowersModal;
 ```
 
-**Monolith (Monolito):** El componente `FollowersModal` no es un monolito en sí mismo, ya que está relacionado con la representación de modales y la interacción con la biblioteca `@mantine/core`.
-
 **Cookbook (Recetario):** Utiliza la biblioteca `@mantine/core` para establecer propiedades del modal y contiene un componente `FollowersCard` predefinido.
 
 **Hollywood:** Delega la lógica del modal y su apertura/cierre en la biblioteca `@mantine/core` y en el componente `FollowersCard`.
@@ -1062,9 +1058,6 @@ const Post = ({ data }) => {
 
 export default Post;
 ```
-
-**Monolith (Monolito):** El componente `Post` no es un monolito en sí mismo, ya que representa un fragmento específico de la interfaz de usuario relacionado con la representación de publicaciones y la interacción de "me gusta".
-
 **Cookbook (Recetario):** Utiliza imágenes predefinidas para representar elementos visuales como iconos y muestra la cantidad de "me gusta" y comentarios.
 
 
@@ -1105,8 +1098,6 @@ const NavIcons = () => {
 
 export default NavIcons;
 ```
-
-**Monolith (Monolito):** El componente `NavIcons` no es un monolito en sí mismo, ya que representa un fragmento específico de la interfaz de usuario relacionado con los íconos de navegación.
 
 **Cookbook (Recetario):** Utiliza íconos predefinidos de bibliotecas como `react-icons` y `@iconscout/react-unicons` para representar íconos de navegación.
 
@@ -1156,7 +1147,7 @@ export default class IUserService {
 };
 ```
 
-###Luego, podríamos implementar esta interfaz en el archivo userService.js:
+Luego, podríamos implementar esta interfaz en el archivo userService.js:
 ```userService.js
 // userService.js
 import UserModel from "../Users/Models/userModel.js";
@@ -1173,7 +1164,7 @@ export default class UserService extends IUserService {
 }
 
 ```
-###Finalmente, en el archivo original, usamos esta interfaz y la implementación concreta a través de la inyección de dependencias: 
+Finalmente, en el archivo original, usamos esta interfaz y la implementación concreta a través de la inyección de dependencias: 
 
 ```AuthController.js
 // userService.js
