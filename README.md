@@ -141,7 +141,7 @@ export const createMessage = async (req, res) => {
 };
 ```
 
-## _Comment And Documentation_
+## _Comments_
 Esta practica se refiere a la práctica de agregar comentarios y documentación al código para explicar su funcionamiento, propósito y cualquier detalle relevante. Esta práctica es esencial para mejorar la legibilidad y mantenibilidad del código, así como para facilitar la colaboración en equipos de desarrollo.
 
 **Comentarios (Comments):**
