@@ -57,7 +57,7 @@ Desde la perspectiva del proyecto, se presenta una red social especificamente di
 ## Modelo de Dominio
 [![Modelo-Dominio.png](https://i.postimg.cc/3R2y6ykd/Modelo-Dominio.png)]
 
-		Figura 2. Modelo de Dominio y los Subcontextos usando Paquetes UML
+	Figura 2. Modelo de Dominio y los Subcontextos usando Paquetes UML
 
 ## Arquitectura y Patrones
 
