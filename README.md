@@ -839,47 +839,61 @@ En RESTful, cada recurso tiene una representación, que suele ser en formato JSO
 
 La implementación del estilo RESTful en el código se logra al crear una API que sigue los principios y restricciones de REST. Se definen rutas y controladores para cada recurso, y el cliente interactúa con estos recursos utilizando métodos HTTP y URLs. Los datos se intercambian en formato JSON entre el cliente y el servidor, lo que proporciona una interfaz uniforme y sin estado para una comunicación efectiva entre ambas partes.
 
-- app.js
+- index.js
 ```javascript
 import express from "express";
-import fileUpload from "express-fileupload";
-import chatRoutes from "./routes/chat.routes.js";
-import { dirname, join } from "path";
-import { fileURLToPath } from "url";
-import cors from 'cors';
-
-const app = express();
-const __dirname = dirname(fileURLToPath(import.meta.url));
-
-// middlewares
-app.use(cors())
-app.use(express.json());
-app.use(
-  fileUpload({
-    useTempFiles: true,
-    tempFileDir: "./upload",
-  })
-);
+import bodyParser from "body-parser";
+import cors from "cors";
+import dotenv from "dotenv";
+import mongoose from "mongoose";
 
 // routes
-app.use(chatRoutes);
-console.log(__dirname);
-app.use(express.static(join(__dirname, "../client/build")));
+import AuthRoute from './routes/AuthRoute.js'
+import UserRoute from './Users/Routes/UserRoute.js'
+import PostRoute from './Posts/Routes/PostRoute.js'
+import UploadRoute from './Posts/Routes/UploadRoute.js'
+import ChatRoute from './Messages/Routes/ChatRoute.js'
+import MessageRoute from './Messages/Routes/MessageRoute.js'
 
-export default app;
+const app = express();
+
+
+// middleware
+app.use(bodyParser.json({ limit: "30mb", extended: true }));
+app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
+app.use(cors());
+// to serve images inside public folder
+app.use(express.static('public')); 
+app.use('/images', express.static('images'));
+
+
+dotenv.config();
+const PORT = process.env.PORT;
+
+const CONNECTION =process.env.MONGODB_CONNECTION;
+mongoose
+  .connect(CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => app.listen(PORT, () => console.log(`Listening at Port ${PORT}`)))
+  .catch((error) => console.log(`${error} did not connect`));
+
+
+app.use('/auth', AuthRoute);
+app.use('/user', UserRoute)
+
+app.use('/posts', PostRoute)
+app.use('/upload', UploadRoute)
+
+app.use('/chat', ChatRoute)
+app.use('/message', MessageRoute)
 ```
 
-- index.js
 
-```javascript
-import app from './app.js'
-import { connectDB } from "./db.js";
-import { PORT } from "./config.js";
+## 1. Estilo de Programación "Things" (The Kingdom of Nouns)
 
-connectDB();
-app.listen(PORT);
-console.log(`Server on port ${PORT}`);
-```
+El estilo de programación "Things", también conocido como "The Kingdom of Nouns", es un enfoque orientado a objetos para organizar y estructurar el código. En este estilo, el problema se descompone en "cosas" (things) que tienen sentido dentro del dominio del problema. Cada "cosa" es una cápsula de datos que expone procedimientos para interactuar con el mundo exterior. La comunicación con los datos internos de una cosa siempre se realiza a través de estos procedimientos, nunca accediendo directamente a los datos.
+
+Este enfoque promueve la encapsulación y la abstracción, lo que facilita el diseño modular y mantenible del software. Cada cosa representa un concepto en el dominio del problema y encapsula su estado y comportamiento, lo que permite cambios internos sin afectar el resto del sistema.
+
 
 
 ### Componente `LogoSearch`
