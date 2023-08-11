@@ -1,6 +1,5 @@
 import React from "react";
 
-import {UilSetting} from "@iconscout/react-unicons";
 import {Link} from "react-router-dom";
 import "./Navicons.css";
 import { AiFillHome, AiFillBell } from 'react-icons/ai';

@@ -36,7 +36,7 @@ export const getAllUsers = async (req, res) => {
 export const updateUser = async (req, res) => {
     const id = req.params.id;
     // console.log("Data Received", req.body)
-    const {_id, currentUserAdmin, password} = req.body;
+    const {_id, password} = req.body;
     if (id === _id) {
         try {
             // If we also have to update password then password will be bcrypted again.

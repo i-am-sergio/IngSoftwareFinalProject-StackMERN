@@ -1,7 +1,5 @@
 import React from "react";
-import Logo from "../../img/logo.png";
 import './LogoSearch.css'
-import {UilSearch} from '@iconscout/react-unicons';
 import {BiSolidSearchAlt2} from "react-icons/bi";
 import {DiJqueryUiLogo} from "react-icons/di";
 

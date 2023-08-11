@@ -19,10 +19,10 @@ const FollowersCard = ({ location }) => {
 
   return (
     <div className="FollowersCard">
-      <h3>People you may know</h3>
+      <h3>Personas que quizas conozcas</h3>
 
       {persons.map((person, id) => {
-        if (person._id !== user._id) return <User person={person} key={id} />;
+        if (person._id !== user._id) return <User person={person} key={person.id} />;
       })}
       {!location ? (
         <span onClick={() => setModalOpened(true)}>Show more</span>
