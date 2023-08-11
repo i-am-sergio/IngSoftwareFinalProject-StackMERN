@@ -62,6 +62,34 @@ Desde la perspectiva del proyecto, se presenta una red social especificamente di
 ## Arquitectura y Patrones
 
 ### 4.1 Diagrama de Componentes o Paquetes
+#### Diagrama de Paquetes
+Los paquetes son unidades de organización en el código fuente de un proyecto de software. Representan una forma de agrupar lógicamente funcionalidades relacionadas. Los paquetes ayudan a dividir el código en módulos más pequeños y manejables, lo que facilita la comprensión, el desarrollo y el mantenimiento. Además, proporcionan encapsulación y modularidad, lo que significa que se pueden desarrollar, probar y modificar componentes individuales sin afectar al resto del sistema.
+
+[![Diagrama-de-Paquetes.png](https://i.postimg.cc/L6PG6z15/Diagrama-de-Paquetes.png)]
+
+
+### Diagrama Despliegue
+La infraestructura de despliegue se inicia con balanceadores de carga, dispositivos especializados que gestionan la distribución equitativa de las solicitudes de los usuarios hacia varios servidores web. Estos servidores, basados en tecnologías como HTTP o HTTPS, atienden las peticiones mediante la generación y presentación de la interfaz de usuario de la red social.
+
+Por debajo de esta capa, se encuentran los servidores de aplicaciones, donde se aloja la lógica de negocio más sofisticada. Aquí se gestionan procesos como la manipulación de perfiles de usuarios, la administración de relaciones sociales y la publicación de contenido. Estos servidores operan en conjunto con las bases de datos, que almacenan los datos estructurados y relacionales del sistema. Dependiendo de la escala y los requisitos de almacenamiento, pueden emplearse bases de datos SQL o NoSQL.
+
+[![diagrama-Despliegue.png](https://i.postimg.cc/PJ9KnF4y/diagrama-Despliegue.png)]
+
+### Diagrama de componentes
+Diagrama de componentes es una representación visual que muestra la estructura y las relaciones entre los componentes principales de un sistema de software. En el contexto de una red social, este diagrama ilustra cómo se organizan y comunican los elementos fundamentales que conforman el sistema.
+
+Componentes:
+
+Interfaz de Usuario: Este componente representa la interfaz visual a través de la cual los usuarios interactúan con la red social. Puede dividirse en subcomponentes más pequeños que manejen la presentación y la interacción del usuario.
+
+Controladores: Los controladores son componentes que manejan la lógica de la aplicación y actúan como intermediarios entre la interfaz de usuario y la lógica empresarial. Controlan las acciones y las solicitudes del usuario, procesan la entrada y coordinan la comunicación entre otros componentes.
+
+Servicios: Los servicios son componentes que encapsulan la lógica empresarial. Pueden incluir funcionalidades como la gestión de perfiles de usuarios, la publicación de contenido y la administración de relaciones sociales. Estos servicios se utilizan desde los controladores y otros componentes para realizar tareas específicas.
+
+Bases de Datos: Representa las bases de datos en las que se almacenan los datos de la red social, como perfiles de usuarios, publicaciones, comentarios y relaciones. Pueden subdividirse en componentes específicos para diferentes tipos de datos o módulos.
+[![Diagrama-compo-1.png](https://i.postimg.cc/6pdcFcGV/Diagrama-compo-1.png)]
+
+
 
 Se incluye un diagrama que representa la arquitectura de componentes o paquetes del sistema. Esto ayuda a comprender la distribución y la interacción de los diferentes componentes del software.
 
