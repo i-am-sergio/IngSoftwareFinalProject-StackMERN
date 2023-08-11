@@ -1,4 +1,4 @@
-# SocialNetworkUniverseasas
+# SocialNetworkUniversity
 
 # Red Social Universitaria: UNIverse
 Integrantes:
