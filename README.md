@@ -31,7 +31,7 @@ Desde la perspectiva del proyecto, se presenta una red social especificamente di
 | Actividades     | Control y manejo del sistema en general |
 					
 
-							Tabla 1 :Perfil de Administrador
+					Tabla 1 :Perfil de Administrador
 
 | Tipo de Usuario   | Usuario                          | 
 |-------------------|------------------------------------|
@@ -39,7 +39,7 @@ Desde la perspectiva del proyecto, se presenta una red social especificamente di
 | Actividades     | Interactuar con la red social, publicar contenido,interactuar con amigos, buscar informacion, reaccionar a publicaciones, chatear, etc.|
 
 
-							Tabla 2 :Perfil de Usuario
+					Tabla 2 :Perfil de Usuario
 
 
 | Requisitos_Funcionales | Requisitos_Funcionales |
